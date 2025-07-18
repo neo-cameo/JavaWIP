@@ -4,6 +4,8 @@
 //  * 
 //  */
 // let fullName = 'Maceo'
+
+
 // let celsius = 10
 // let fahrenheit = celsius * 1.8 + 32
 // console.log(fahrenheit)
@@ -77,8 +79,64 @@
 // }
 
 
-const str = "Frontend Simplified"
+// const str = "Frontend Simplified"
 
-for (let i=0; i<str.length; ++i) {
-    console.log(str [i])
+// for (let i=0; i<str.length; ++i) {
+//     console.log(str [i])
+// }
+
+// function welcomePersonToFES(firstName, lastName) {
+//     console.log(`Welcome to FES, ${firstName} ${lastName}`)
+// }
+
+// welcomePersonToFES("Maceo", "Dingle")
+// welcomePersonToFES("Mark", "Astra")
+// welcomePersonToFES("John", "Legend")
+
+// function sumOfTwoNumbers(num1, num2) {
+//     return num1 + num2
+// }
+
+// console.log(sumOfTwoNumbers(10, 10))
+
+
+// function convertCelsiusToFahrenheit(celsius) {
+//     let fahrenheit = celsius * 1.8 + 32
+//     return fahrenheit
+// }
+
+// const convertCelsiusToFahrenheit = (celsius) => {
+//     return celsius * 1.8 + 32
+// } 
+
+// console.log(convertCelsiusToFahrenheit(0))
+
+let arr = [20, 30, 40, 50, 100]
+
+// console.log(arr[0])
+// console.log(arr[arr.length-1])
+
+arr.push (200)
+
+let newArr = arr.filter((element) => element < 50)
+
+console.log(newArr)
+
+let gradeSet1 = ['A+', 'A', 'FAIL']
+// let gradeSet2 = ['FAIL', 'FAIL', 'B']
+// let gradeSet3 = ['FAIL']
+
+// let grade1 = gradeSet1.filter((element) => element !== 'FAIL')
+// console.log(grade1)
+// let grade2 = gradeSet2.filter((element) => element !== 'FAIL')
+// console.log(grade2)
+// let grade3 = gradeSet3.filter((element) => element !== 'FAIL')
+// console.log(grade3)
+
+let goodGrades =[]
+for (let i=0; i < gradeSet1.length; ++i) {
+    if (gradeSet1[i] !== 'FAIL') {
+        goodGrades.push (gradeSet1[i])
+    }
 }
+console.log(goodGrades)
