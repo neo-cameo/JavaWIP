@@ -111,18 +111,18 @@
 
 // console.log(convertCelsiusToFahrenheit(0))
 
-let arr = [20, 30, 40, 50, 100]
+// let arr = [20, 30, 40, 50, 100]
 
 // console.log(arr[0])
 // console.log(arr[arr.length-1])
 
-arr.push (200)
+// arr.push (200)
 
-let newArr = arr.filter((element) => element < 50)
+// let newArr = arr.filter((element) => element < 50)
 
-console.log(newArr)
+// console.log(newArr)
 
-let gradeSet1 = ['A+', 'A', 'FAIL']
+// let gradeSet1 = ['A+', 'A', 'FAIL']
 // let gradeSet2 = ['FAIL', 'FAIL', 'B']
 // let gradeSet3 = ['FAIL']
 
@@ -133,10 +133,38 @@ let gradeSet1 = ['A+', 'A', 'FAIL']
 // let grade3 = gradeSet3.filter((element) => element !== 'FAIL')
 // console.log(grade3)
 
-let goodGrades =[]
-for (let i=0; i < gradeSet1.length; ++i) {
-    if (gradeSet1[i] !== 'FAIL') {
-        goodGrades.push (gradeSet1[i])
-    }
+// let goodGrades =[]
+// for (let i=0; i < gradeSet1.length; ++i) {
+//     if (gradeSet1[i] !== 'FAIL') {
+//         goodGrades.push (gradeSet1[i])
+//     }
+// }
+// console.log(goodGrades)
+
+
+// let arr = [1, 4, 9, 16]
+
+// let newArray = arr.map((element) => 'dog')
+
+// console.log(newArray)
+
+let dollars = [1, 5, 10, 3]
+
+// let cents = dollars.map((element) => (element*100))
+
+// console.log(cents)
+
+let cents = []
+for (let i = 0; i < dollars.length; ++i) {
+    cents.push (dollars[i]*100)
 }
-console.log(goodGrades)
+
+console.log(cents)
+
+// let dollar2 = [0, 10, 20]
+
+// let cent2 = dollar2.map((element) => {
+//     return (element*100)
+// })
+
+// console.log(cent2)
