@@ -1,15 +1,13 @@
 // console.log('Hello World')
 // console.log('Hello World'.length)
 // /**
-//  * 
+//  *
 //  */
 // let fullName = 'Maceo'
-
 
 // let celsius = 10
 // let fahrenheit = celsius * 1.8 + 32
 // console.log(fahrenheit)
-
 
 // let subscribed = false
 // let loggedIn = true
@@ -23,7 +21,6 @@
 // else {
 //     console.log('tell user to log into their account')
 // }
-
 
 // let cash = 50
 // let price = 40
@@ -39,7 +36,6 @@
 //     console.log(`Don't give receipt`)
 // }
 
-
 // let money = 50
 // let cost = 40
 // let isStoreOpen = true
@@ -48,13 +44,11 @@
 //     console.log('print the receipt')
 // }
 
-
 // let subbed = false
 // let login = true
 
 // let str = subbed || login ? 'show the video' : 'hide the video'
 // console.log(str)
-
 
 // let count = 1
 
@@ -66,7 +60,7 @@
 // for (let i = 1; i <= 20; i++) {
 //     if (i % 3 ===0 && i % 5 === 0) {
 //         console.log (`${i} -> Frontend Simplified`)
-//     } 
+//     }
 //     else if (i % 3 === 0) {
 //         console.log(`${i} -> Frontend`)
 //     }
@@ -77,7 +71,6 @@
 //         console.log(`${i} -> ${i}`)
 //     }
 // }
-
 
 // const str = "Frontend Simplified"
 
@@ -99,7 +92,6 @@
 
 // console.log(sumOfTwoNumbers(10, 10))
 
-
 // function convertCelsiusToFahrenheit(celsius) {
 //     let fahrenheit = celsius * 1.8 + 32
 //     return fahrenheit
@@ -107,7 +99,7 @@
 
 // const convertCelsiusToFahrenheit = (celsius) => {
 //     return celsius * 1.8 + 32
-// } 
+// }
 
 // console.log(convertCelsiusToFahrenheit(0))
 
@@ -141,25 +133,24 @@
 // }
 // console.log(goodGrades)
 
-
 // let arr = [1, 4, 9, 16]
 
 // let newArray = arr.map((element) => 'dog')
 
 // console.log(newArray)
 
-let dollars = [1, 5, 10, 3]
+// let dollars = [1, 5, 10, 3]
 
-// let cents = dollars.map((element) => (element*100))
+// // let cents = dollars.map((element) => (element*100))
+
+// // console.log(cents)
+
+// let cents = []
+// for (let i = 0; i < dollars.length; ++i) {
+//     cents.push (dollars[i]*100)
+// }
 
 // console.log(cents)
-
-let cents = []
-for (let i = 0; i < dollars.length; ++i) {
-    cents.push (dollars[i]*100)
-}
-
-console.log(cents)
 
 // let dollar2 = [0, 10, 20]
 
@@ -168,3 +159,126 @@ console.log(cents)
 // })
 
 // console.log(cent2)
+
+// let users = [
+//     {
+//     username: "Neo-cameo",
+//     email: 'ssjmaceo@lala.com',
+//     password: 'transformationstation',
+//     subscriptionStatus: 'VIP',
+//     discordID: 'cameo#1234',
+//     lessonsCompleted: [0, 1, 2, 3]
+// }
+// ]
+
+// // function register(username, email, password, subscriptionStatus, discordID, lessonsCompleted) {
+// //     for (let i=0; i < user.length; ++i) {
+// //         if (user[i].username === username) {
+// //             console.log('accepted')
+// //         }
+// //         else {
+// //             console.log('incorrect username')
+// //         }
+// //         if (user[i].email === email) {
+// //             console.log('accepted')
+// //         }
+// //         else {
+// //             console.log('incorrect email')
+// //         }
+// //     }
+// // }
+
+// // register('Neo-cameo', 'ssjmaceo@lala.com')
+
+// function register(user) {
+//     users.push(user)
+// }
+
+// register({
+//     username: 'cameo',
+//     email: 'ssjmaceo@lala.com',
+//     password: 'transformationstation',
+//     subscriptionStatus: 'VIP',
+//     discordID: 'cameo#1234',
+//     lessonsCompleted: [0, 1, 2]
+// });
+
+// console.log(users)
+
+// console.log(document.querySelector('h1').innerHTML = "FrontEndSimplified")
+
+// console.log(document.getElementById('title'))
+
+// function changeToRed() {
+//     document.querySelector('h1').style.color = "red"
+//     console.log('clicked');
+// }
+
+// function toggleDarkMode() {
+//     document.querySelector('body').classList.toggle("dark-theme")
+// }
+
+//PROMISES
+
+// 1. THEN
+// const emailRef = document.querySelector(".email");
+// // console.log(emailRef);
+
+// // fetch("https://jsonplaceholder.typicode.com/users/1")
+// //   .then((response) => {
+// //     return response.json();
+// //   })
+// //   .then((data) => {
+// //     console.log(data);
+// //     emailRef.innerHTML = data.email
+// //   });
+
+// // 2. Async/Await
+// async function main() {
+//     const response = await fetch("https://jsonplaceholder.typicode.com/users/1");
+//     const data = await response.json()
+//     console.log(data)
+//     emailRef.innerHTML =data.email
+// }
+ 
+// main();
+
+// Challenge
+const statusRef = document.querySelector(".status")
+const videoRef = document.querySelector(".video")
+
+function getSubscriptionStatus() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+           resolve("VIP") 
+        }, 2000);
+    })
+}
+
+function getVideo(subscriptionStatus) {
+    return new Promise((resolve, reject) => {
+        if (subscriptionStatus === "VIP") {
+            resolve("show video")
+        }
+        else if (subscriptionStatus === "FREE") {
+            resolve("show trailer")
+        }
+        else {
+            reject("no video")
+        }
+    })
+}
+
+async function main() {
+    const status = await getSubscriptionStatus();
+    statusRef.innerHTML = status
+    try {
+        console.log( await getVideo(status))
+    }
+    catch(e) {
+        console.log(e)
+        videoRef.innerHTML = e
+    }
+}
+
+main()
