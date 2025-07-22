@@ -162,7 +162,7 @@
 
 // let users = [
 //     {
-//     username: "Neo-cameo",
+//     username: "cameo",
 //     email: 'ssjmaceo@lala.com',
 //     password: 'transformationstation',
 //     subscriptionStatus: 'VIP',
@@ -188,7 +188,7 @@
 // //     }
 // // }
 
-// // register('Neo-cameo', 'ssjmaceo@lala.com')
+// // register('cameo', 'ssjmaceo@lala.com')
 
 // function register(user) {
 //     users.push(user)
