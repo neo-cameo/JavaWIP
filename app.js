@@ -214,6 +214,8 @@
 //     console.log('clicked');
 // }
 
+//DARKMODE TOGGLE
+
 // function toggleDarkMode() {
 //     document.querySelector('body').classList.toggle("dark-theme")
 // }
@@ -240,45 +242,89 @@
 //     console.log(data)
 //     emailRef.innerHTML =data.email
 // }
- 
+
 // main();
 
 // Challenge
-const statusRef = document.querySelector(".status")
-const videoRef = document.querySelector(".video")
+// const statusRef = document.querySelector(".status")
+// const videoRef = document.querySelector(".video")
 
-function getSubscriptionStatus() {
-    return new Promise((resolve, reject) => {
-        setTimeout(() => {
-           resolve("VIP") 
-        }, 2000);
-    })
+// function getSubscriptionStatus() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//            resolve("VIP")
+//         }, 2000);
+//     })
+// }
+
+// function getVideo(subscriptionStatus) {
+//     return new Promise((resolve, reject) => {
+//         if (subscriptionStatus === "VIP") {
+//             resolve("show video")
+//         }
+//         else if (subscriptionStatus === "FREE") {
+//             resolve("show trailer")
+//         }
+//         else {
+//             reject("no video")
+//         }
+//     })
+// }
+
+// async function main() {
+//     const status = await getSubscriptionStatus();
+//     statusRef.innerHTML = status
+//     try {
+//         console.log( await getVideo(status))
+//     }
+//     catch(e) {
+//         console.log(e)
+//         videoRef.innerHTML = e
+//     }
+// }
+
+// main()
+
+// function showRating(rating) {
+//     let ratings ="";
+//     for (let i = 0; i < Math.floor(rating); ++i) {
+//         ratings = ratings + "*"
+//         if (i !== Math.floor(rating) - 1) {
+//             ratings = ratings + " "
+//         }
+//     }
+//     if (!Number.isInteger(rating)) {
+//         ratings = ratings + " ."
+//     }
+//     return ratings
+// }
+
+// console.log(showRating(4.5))
+
+// function sortLowToHigh(numbers) {
+//     return numbers.sort((a,b) => (a-b))
+// }
+
+// console.log(sortLowToHigh([1, 5, 0, 10, 4]))
+
+// function sortHighToLow(numbers) {
+//   return numbers.sort((a, b) => b.price - a.price);
+// }
+
+// console.log(
+//   sortHighToLow([
+//     { id: 1, price: 50 },
+//     { id: 2, price: 0 },
+//     { id: 3, price: 500 },
+//   ])
+// );
+
+
+async function firstSixIncomplete(userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const data = await promise.json()
+    const incompleteTasks = data.filter(element => !element.completed).slice(0, 6)
+    console.log(incompleteTasks)
 }
 
-function getVideo(subscriptionStatus) {
-    return new Promise((resolve, reject) => {
-        if (subscriptionStatus === "VIP") {
-            resolve("show video")
-        }
-        else if (subscriptionStatus === "FREE") {
-            resolve("show trailer")
-        }
-        else {
-            reject("no video")
-        }
-    })
-}
-
-async function main() {
-    const status = await getSubscriptionStatus();
-    statusRef.innerHTML = status
-    try {
-        console.log( await getVideo(status))
-    }
-    catch(e) {
-        console.log(e)
-        videoRef.innerHTML = e
-    }
-}
-
-main()
+console.log(firstSixIncomplete(6))
